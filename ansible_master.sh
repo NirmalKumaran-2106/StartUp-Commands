@@ -12,4 +12,3 @@ swapon -s
 java --version
 ansible --version
 git --version
-ssh-keygen -C "ansible_master" -N ""
