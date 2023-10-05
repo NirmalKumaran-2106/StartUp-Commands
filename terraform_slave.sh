@@ -1,7 +1,6 @@
-nsudo yum update –y
+sudo yum update –y
 sudo amazon-linux-extras install java-openjdk11 -y
 sudo amazon-linux-extras install ansible2 -y
-sudo yum install git -y
 swapon -s
 sudo dd if=/dev/zero of=/swapfile bs=1M count=3072
 sudo chmod 600 /swapfile
@@ -15,4 +14,4 @@ sudo mv terraform /usr/local/bin/
 terraform --version
 java --version
 ansible --version
-git -version
+git --version

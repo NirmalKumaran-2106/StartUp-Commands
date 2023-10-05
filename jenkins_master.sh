@@ -14,4 +14,3 @@ sudo mkswap /swapfile
 sudo swapon /swapfile
 sudo echo '/swapfile none swap sw 0 0' | sudo tee -a /etc/fstab
 swapon -s
-sudo yum install git -y
