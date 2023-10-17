@@ -3,7 +3,7 @@ resource "aws_eks_cluster" "test-eks-eu-west-1" {
   role_arn = aws_iam_role.testrole.arn
   vpc_config {
     subnet_ids = [ "aws_subnet.private_subnet-eu-west-12b.id", "aws_subnet.private_subnet-eu-west-14b.id", "aws_subnet.public_subnet-eu-west-11a.id", "aws_subnet.public_subnet-eu-west-13a.id" ]
-    security_group_ids = [aws_security_group.test-securitygroup.id]
+    security_group_ids = [aws_security_group.test-securitygroup-eu-west-1.id]
   }
 }
 resource "kubernetes_secret" "test-credentials-eu-west-1" {
@@ -65,7 +65,7 @@ resource "aws_eks_cluster" "test-eks-ap-southeat-1" {
   role_arn = aws_iam_role.testrole.arn
   vpc_config {
     subnet_ids = [ "aws_subnet.private_subnet-ap-southeat-12b.id", "aws_subnet.private_subnet-ap-southeat-14b.id", "aws_subnet.public_subnet-ap-southeat-11a.id", "aws_subnet.public_subnet-ap-southeat-13a.id" ]
-    security_group_ids = [aws_security_group.test-securitygroup.id]
+    security_group_ids = [aws_security_group.test-securitygroup-ap-southeast-1.id]
   }
 }
 resource "kubernetes_secret" "test-credentials-ap-southeat-1" {
@@ -95,7 +95,7 @@ resource "aws_db_instance" "test-rdb-instance-ap-southeat-1" {
 resource "aws_lb" "test-load-balancer-ap-southeat-1" {
   name = "test-load-balancer"
   subnets = [ "aws_subnet.private_subnet-ap-southeat-12b.id", "aws_subnet.private_subnet-ap-southeat-14b.id", "aws_subnet.public_subnet-ap-southeat-11a.id", "aws_subnet.public_subnet-ap-southeat-13a.id" ]
-  security_groups = [ aws_security_group.test-securitygroup-ap-southeat-1.id ]
+  security_groups = [ aws_security_group.test-securitygroup-ap-southeast-1.id ]
   load_balancer_type = "network"
 }
 resource "aws_launch_configuration" "test_launch_config-ap-southeat-1" {
