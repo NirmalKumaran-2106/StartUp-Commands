@@ -188,7 +188,7 @@ resource "aws_nat_gateway" "nat-gateway-ap-southeast-13a" {
   subnet_id = aws_subnet.public_subnet-ap-southeast-13a.id
   allocation_id = aws_eip.nat_eip-ap-southeast-13a.id
 }
-resource "aws_route_table" "routetable-private-a" {
+resource "aws_route_table" "routetable-private-2a" {
   vpc_id = aws_vpc.test-vpc-ap-southeast-1.id
   route {
     cidr_block = "0.0.0.0/0"
@@ -198,11 +198,11 @@ resource "aws_route_table" "routetable-private-a" {
     Name = "RouteTable-A"
   }
 }
-resource "aws_route_table_association" "associate-a" {
+resource "aws_route_table_association" "associate-2a" {
   subnet_id = aws_subnet.private_subnet-ap-southeast-12b.id
-  route_table_id = aws_route_table.routetable-private-a.id
+  route_table_id = aws_route_table.routetable-private-2a.id
 }
-resource "aws_route_table" "routetable-private-b" {
+resource "aws_route_table" "routetable-private-2b" {
   vpc_id = aws_vpc.test-vpc-ap-southeast-1.id
   route {
     cidr_block = "0.0.0.0/0"
@@ -212,7 +212,7 @@ resource "aws_route_table" "routetable-private-b" {
     Name = "RouteTable-B"
   }
 }
-resource "aws_route_table_association" "associate-b" {
+resource "aws_route_table_association" "associate-2b" {
   subnet_id = aws_subnet.private_subnet-ap-southeast-14b.id
-  route_table_id = aws_route_table.routetable-private-b.id
+  route_table_id = aws_route_table.routetable-private-2b.id
 }
