@@ -1,3 +1,8 @@
 provider "aws" {
-  region = [ "ap-southeast-1", "eu-west-1"]
+  alias = "ap-southeast"
+  region = "ap-southeast-1"
+}
+provider "aws" {
+  alias = "eu-west"
+  region = "eu-west-1"
 }
